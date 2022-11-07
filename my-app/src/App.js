@@ -1,26 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import "./App.css"
+import Body from './components/Body';
+import Header from './components/Header/Header';
 
 function App() {
 
-
-
-    let [animeList, updateAnime] = useState([])
-
-    useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-    .then(response => response.json())
-    .then(users => updateAnime(() => users),
-     () => console.log(animeList))
-    })
-
-  
+    
 
   return (
     <div className="App">
-
-    {animeList.map(anime => <h1 key={anime.id}>{anime.name}</h1>)}
-
+    <Header/>
+    <Body/>
     </div>
   );
 }
